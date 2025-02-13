@@ -1,0 +1,96 @@
+/* Custom properties */
+:root{
+    --primary-color: rgb(112, 5, 5);
+    --light-color: aliceblue;
+    --dark-color: #333
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+header, footer{
+    display: flex;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 1rem;
+    align-items: center;
+}
+
+nav{
+    flex: 1;
+}
+
+nav ul{
+    display: flex;
+    list-style-type: none;
+}
+nav ul li{
+    flex: 1;
+}
+nav a{
+    color: var(--light-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 0.5rem, 1rem;
+}
+
+nav a:hover, :focus{
+    color: var(--primary-color);
+    background-color: var(--light-color);
+}
+
+/* adjacent sibling selector */
+h2+p{
+    border: 2px solid var(--dark-color);
+    padding: 1rem;
+    margin: 0 2rem;
+    border-radius: 1rem;
+}
+
+/* first letter pseudo element */
+h2+p::first-letter{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    padding: 0.25rem;
+}
+input::placeholder{
+    font-style: italic;
+}
+
+/* start rating using future siblings selector */
+.stars span:hover~span{
+    opacity: 0.3;
+}
+.stars span{
+    cursor: pointer;
+}
+/* attribute selector */
+/* a[href=#]{
+
+} */
+a[href^='http']{
+    border-left: 4px solid var(--primary-color);
+    margin-left: 2rem;
+    padding-left: 1rem;
+}
+p::selection{
+    background-color: var(--primary-color);
+    color: var(--light-color);
+}
+.google{
+    background-color: var(--dark-color);
+    color: var(--light-color);
+    display: block;
+    padding: 1rem;
+    margin: 20px 0;
+    width: calc(100%-68px);
+    /* width: calc(100%-32px-2px-16px-16px); */
+    /* width: calc(100%-2rem-2px-1rem-1rem); */
+}
+/* placeholder */
